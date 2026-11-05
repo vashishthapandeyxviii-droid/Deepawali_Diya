@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #150a05
+}
+
+/*canvas
+*/
+canvas {
+    display: block;
+    position: fixed;
+    inset: 0;
+    touch-action: none;
+}
+
+/* text on the top */
+.title, .hint {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin:0;
+    text-align: center;
+    pointer-events:none;
+    user-select:none;
+    font-family: Georgia, 
+    'Times New Roman', Times, serif;
+    color: #e8b872;
+    text-shadow: 0 1px 8px #000;
+}
+
+.title {
+    top: 3.5vh;
+    font-size: clamp(1.1rem, 4vw, 
+    1.6rem);
+    font-weight: normal;
+    letter-spacing: 0.12rem;
+    opacity:0.85;
+}
+
+.hint{
+    bottom: 3.5vh;
+    font-size: clamp(0.85rem, 3vw,
+    1rem);
+    font-style: italic;
+    opacity:0.75
+}
