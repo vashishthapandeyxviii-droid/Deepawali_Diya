@@ -106,8 +106,8 @@ const overDiya = e => {
 };
 const toggle = () => {
   lit = !lit;
-  hint.textContent.Content = lit? 
-  'Tap the diya again to put it out' : 
+  if (lit) playIgnite();
+  hint.textContent = lit ? 'Tap the diya again to put it out' : 
   'Tap the diya to light it';
 };
 addEventListener('click', e => { if (overDiya(e)) toggle(); });

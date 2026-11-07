@@ -38,7 +38,6 @@ export function playIgnite() {
   burst(0.22, 0.7, 150, 400, 0.6, 'lowpass', 0.7);      // low body of the whoomp
   for (let i = 0; i < 9; i++) {                         // tiny crackles from the oil and wick
     burst(0.5 + Math.random() * 1.5, 0.03 + Math.random() * 0.03,
-          3000 + Math.random() * 3000, 1500, 0.15 + Math.random() * 0.25, 
-          'bandpass', 2);
+          3000 + Math.random() * 3000, 1500, 0.15 + Math.random() * 0.25, 'bandpass', 2);
   }
 }
