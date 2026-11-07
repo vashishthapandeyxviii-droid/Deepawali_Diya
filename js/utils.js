@@ -26,3 +26,5 @@ export function canvasTex(size, draw, {
     if (color) t.colorSpace = THREE.SRGBColorSpace;
     return t; 
 }
+
+

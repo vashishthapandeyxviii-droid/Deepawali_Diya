@@ -45,15 +45,15 @@ export function createSurface(scene) {
 
   // Plate: a flat middle that curves up into a rim (side profile spun around the Y axis)
   const dishPts = new THREE.SplineCurve(
-    [[0, 0], [4.6, 0], [5.2, 0.05], [5.6, 0.2], 
-    [5.85, 0.38], [5.97, 0.55]].map(p => new THREE.Vector2(...p))
+    [[0, 0], [3.2, 0], [3.6, 0.05], [3.85, 0.2], 
+    [4.0, 0.38], [4.08, 0.55]].map(p => new THREE.Vector2(...p))
   ).getPoints(40);
   const dish = new THREE.Mesh(new THREE.LatheGeometry(
     dishPts, 96), brass);
   dish.receiveShadow = true;
 
   const rim = new THREE.Mesh(new THREE.TorusGeometry(
-    5.97, 0.08, 12, 96).rotateX(Math.PI / 2), brass);
+    4.08, 0.08, 12, 96).rotateX(Math.PI / 2), brass);
   rim.position.y = 0.56;
 
   scene.add(dish, rim);

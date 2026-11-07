@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,12 @@
 
   <!-- Tells the browser where to find Three.js whenever a file says: import ... from 'three' -->
   <script type="importmap">
-    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js" } }
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+    }
   </script>
 </head>
 <body>
@@ -17,4 +22,4 @@
 
   <script type="module" src="js/main.js"></script>
 </body>
-</html> 
+</html>
