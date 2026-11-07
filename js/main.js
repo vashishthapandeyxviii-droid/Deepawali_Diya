@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {createSurface} from './surface.js';
 import {createDiya} from './diya.js'; 
+import {createFlowers} from './flowers.js';
 
 
 /* ================= 1. Renderer, scene, camera ================= */
@@ -44,6 +45,7 @@ scene.add(key);
 /* ================= 3. Build the scene (order matters a little: it uses seeded random numbers) ================= */
 createSurface(scene);
 const {diya, hit, tipMat} = createDiya(scene);
+createFlowers(scene);
 /* ================= 4. Responsive camera (fixed position, refits on resize) ================= */
 function resize() {
   const w = innerWidth, h = innerHeight, aspect = w / h;
