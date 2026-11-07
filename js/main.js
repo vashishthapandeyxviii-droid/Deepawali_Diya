@@ -5,6 +5,7 @@ import {createDiya} from './diya.js';
 import {createFlame} from './flame.js';
 import {createFlowers} from './flowers.js';
 import {createPostProcess} from './postprocess.js';
+import {playIgnite} from './sound.js';
 const LIGHT_POWER = 16; //flame brightness 
 /* 1. renderer, scene, camera */
 const renderer = new THREE.WebGLRenderer(
@@ -105,7 +106,8 @@ const overDiya = e => {
 };
 const toggle = () => {
   lit = !lit;
-  hint.textContent = lit ? 'Tap the diya again to put it out' : 
+  hint.textContent.Content = lit? 
+  'Tap the diya again to put it out' : 
   'Tap the diya to light it';
 };
 addEventListener('click', e => { if (overDiya(e)) toggle(); });
