@@ -4,6 +4,7 @@ import {createSurface} from './surface.js';
 import {createDiya} from './diya.js'; 
 import {createFlame} from './flame.js';
 import {createFlowers} from './flowers.js';
+import {createPostProcess} from './postprocess.js';
 const LIGHT_POWER = 16; //flame brightness 
 /* 1. renderer, scene, camera */
 const renderer = new THREE.WebGLRenderer(
@@ -63,6 +64,8 @@ const {diya, hit, tipMat} = createDiya(scene);
 const {flame, light: flameLight, halo, wide, timeU, powerU,
   flickU} = createFlame(diya);
 createFlowers(scene); 
+const post = createPostProcess(renderer);
+
 
 /* 4. Responsive camera (fixed position, refits on resize) */
 function resize() {
@@ -84,6 +87,7 @@ function resize() {
   );
   camera.lookAt(lookAt);
   camera.updateProjectionMatrix();
+  post.resize(w,h, camera, dist); 
 }
 addEventListener('resize', resize);
 resize();
@@ -156,5 +160,5 @@ renderer.setAnimationLoop(() => {
   frame % 3 === 0) renderer.shadowMap.needsUpdate = true;         // refresh shadows every 3rd frame
   frame++;
 
-  renderer.render(scene, camera);
+  post.render(scene, camera);
 });
