@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 let seed = 7;
-export const randnum= () => {
+export const randNum= () => {
     seed = (seed * 16807) % 2147483647;
     return (seed -1)/2147483646;
 }
